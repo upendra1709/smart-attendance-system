@@ -1,4 +1,3 @@
-venv/
+attendenv/
 __pycache__/
 .env
-*.pyc
