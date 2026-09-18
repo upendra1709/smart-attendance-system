@@ -4,7 +4,7 @@ An AI-driven, contactless attendance system for campuses that replaces paper reg
 
 ## 🔗 Live Demo
 
-- **Frontend (Vercel):** smart-attendance-system-wheat-phi.vercel.app
+- **Frontend (Vercel):** smart-attendan-git-573346-upendrarajpoot2005-gmailcoms-projects.vercel.app
 - **Backend API (Render):** https://smart-attendance-system-gc7k.onrender.com
 
 ## ✨ Features (in progress)
