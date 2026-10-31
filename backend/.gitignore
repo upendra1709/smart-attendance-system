@@ -1,4 +1,40 @@
-attendenv/
-__pycache__/
+
+# ---- secrets: never commit these ----
 .env
-*.pyc
+.env.*
+!.env.example
+
+# ---- Python virtual environments (yours is named "attendenv") ----
+attendenv/
+venv/
+.venv/
+env/
+ENV/
+
+# ---- Python cache / build ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# ---- local databases ----
+*.db
+*.sqlite
+*.sqlite3
+
+# ---- face models: downloaded at build time by scripts/download_face_models.py ----
+models/*.onnx
+models/*.onnx.part
+
+# ---- editor / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
