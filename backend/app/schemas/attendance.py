@@ -1,5 +1,6 @@
 from datetime import datetime
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, ConfigDict, field_validator
+
 
 class AttendanceMark(BaseModel):
     session_id: int
@@ -10,12 +11,15 @@ class AttendanceMark(BaseModel):
 
     @field_validator("status")
     @classmethod
-    def status_must_be_valid(cls, v):
-        if v not in {"present", "late", "absent"}:
-            raise ValueError("status must be present, late or absent")
-        return v
+    def valid_status(cls, value: str) -> str:
+        if value not in {"present", "late", "absent"}:
+            raise ValueError("Status must be present, late or absent")
+        return value
+
 
 class AttendanceOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     session_id: int
     student_id: int
@@ -23,6 +27,3 @@ class AttendanceOut(BaseModel):
     confidence: float | None
     method: str
     marked_at: datetime
-
-    class Config:
-        from_attributes = True
